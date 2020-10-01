@@ -2,7 +2,7 @@
 
 ![GitHub package.json version](https://img.shields.io/github/package-json/v/ThomasK33/node-underlords)
 ![Node.js CI](https://github.com/ThomasK33/node-underlords/workflows/Node.js%20CI/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/ThomasK33/node-underlords/badge.svg?branch=refs/tags/v1.0.0-test)](https://coveralls.io/github/ThomasK33/node-underlords?branch=refs/tags/v1.0.0-test)
+[![Coverage Status](https://coveralls.io/repos/github/ThomasK33/node-underlords/badge.svg?branch=master)](https://coveralls.io/github/ThomasK33/node-underlords?branch=master)
 ![node-current](https://img.shields.io/node/v/underlords)
 ![NPM](https://img.shields.io/npm/l/underlords)
 
