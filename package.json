@@ -2,7 +2,14 @@
   "name": "underlords",
   "version": "1.0.0",
   "description": "Library for encoding and decoding Underlords share codes",
-  "keywords": [],
+  "keywords": [
+    "dota",
+    "underlords",
+    "valve",
+    "share",
+    "board",
+    "codes"
+  ],
   "main": "dist/underlords.umd.js",
   "module": "dist/underlords.es5.js",
   "typings": "dist/types/underlords.d.ts",
