@@ -94,8 +94,21 @@ jobs:
         with:
           node-version: ${{ env.DEFAULT_NODE_VERSION }}
           registry-url: "https://npm.pkg.github.com"
+      - name: Insert repository owner as scope into package name
+        run: |
+          node <<EOF
+          const fs = require('fs').promises;
+          fs.readFile('package.json', 'utf8').then((data) => JSON.parse(data)).then((json) => {
+              json.name = '@$(echo "$GITHUB_REPOSITORY" | sed 's/\/.\+//')/' + json.name;
+              console.info('Package name changed to %s', json.name);
+              return fs.writeFile('package.json', JSON.stringify(json), 'utf8');
+          }).catch(error => {
+              console.error(error);
+              process.exit(1);
+          });
+          EOF
       - name: Publish to GPR
         run: npm publish
         continue-on-error: true
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GH_REGISTRY_PAT }}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
