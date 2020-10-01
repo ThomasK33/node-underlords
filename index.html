@@ -65,13 +65,72 @@
 <div class="container container-main">
 	<div class="content-wrap">
 		<div class="tsd-panel tsd-typography">
-			<a href="#underlords-nodejs-library-for-dota-underlords-related-code" id="underlords-nodejs-library-for-dota-underlords-related-code" style="color: inherit; text-decoration: none;">
-				<h1>Underlords: Node.js library for Dota Underlords related code</h1>
+			<a href="#node-underlords" id="node-underlords" style="color: inherit; text-decoration: none;">
+				<h1>Node-Underlords</h1>
 			</a>
+			<p><img src="https://img.shields.io/github/package-json/v/ThomasK33/node-underlords" alt="GitHub package.json version">
+				<img src="https://github.com/ThomasK33/node-underlords/workflows/Node.js%20CI/badge.svg" alt="Node.js CI">
+				<a href="https://coveralls.io/github/ThomasK33/node-underlords?branch=master"><img src="https://coveralls.io/repos/github/ThomasK33/node-underlords/badge.svg?branch=master" alt="Coverage Status"></a>
+				<img src="https://img.shields.io/node/v/underlords" alt="node-current">
+			<img src="https://img.shields.io/npm/l/underlords" alt="NPM"></p>
+			<p>TypeScript / JavaScript library for Dota Underlords.</p>
+			<hr>
+			<a href="#features" id="features" style="color: inherit; text-decoration: none;">
+				<h2>Features</h2>
+			</a>
+			<ul>
+				<li>Share code parsing</li>
+				<li>Share code encoding</li>
+			</ul>
+			<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+				<h2>Installation</h2>
+			</a>
+			<p>This is a <a href="https://nodejs.org/">Node.js</a> module available through the <a href="https://www.npmjs.com/">NPM registry</a> and the <a href="https://github.com/features/packages">GitHub Packages</a>.</p>
+			<p>Before installing, please download and install a Node.js version greater or equal to 10.0.</p>
+			<p>Installation of the module is done using the npm install command:</p>
+			<pre><code class="language-bash">npm install underlords</code></pre>
+			<a href="#quick-start" id="quick-start" style="color: inherit; text-decoration: none;">
+				<h2>Quick Start</h2>
+			</a>
+			<pre><code class="language-javascript"><span class="hljs-comment">// Parse an Underlords share code to a ShareCodeV8 instance</span>
+<span class="hljs-keyword">const</span> shareCode =
+    <span class="hljs-string">&quot;8qAMAAP4BAK4BAATjJ/5uAEZuAAAgEVM0LgAAAG0AbQAACwAAAP8BDAABCRsI/wAJARcBAQAOAQUBAQAGES0QbUBHOlcBEmoBAAFIACABaBABAyAAEAEpLAIgIAAwAAAGAgEgAAWCAHUR2gB0EQkBAQRjAAVyLBAAAgABBAMGdycAdy4fAK4BAA==&quot;</span>;
+<span class="hljs-keyword">const</span> shareCode = ShareCodeV8.fromBase64String(shareCode);
+
+<span class="hljs-comment">// Log board unit at index 0x0</span>
+<span class="hljs-built_in">console</span>.log(shareCode.boardUnitIDs[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]);
+<span class="hljs-comment">// -&gt; 32 (Abaddon)</span>
+
+<span class="hljs-comment">// Log unit item at index 4x4</span>
+<span class="hljs-built_in">console</span>.log(shareCode.unitItems[<span class="hljs-number">4</span>][<span class="hljs-number">4</span>].itemID);
+<span class="hljs-comment">// -&gt; 10211 (maelstrom_rot1)</span>
+
+<span class="hljs-comment">// Change unit at 0x0 to unit id 46 (Alchemist)</span>
+shareCode.boardUnitIDs[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">46</span>;
+
+<span class="hljs-keyword">const</span> resultingShareCode = shareCode.toBase64String();
+<span class="hljs-comment">// -&gt; 8qAMAAP4BAK4BAATjJ/5uAEZuAAAuEVMBCThtAG0AAAsAAAD/AABtAAEJGwj/AAkBFwEBAA4BBQEBBAYAASEcbQAAbUBHOlcBEmoBAAFIJCAgAAAAAQMgABABKTACICAAMAAABgIBIAAAARoAdRHaAHQRCQEBBGMABXIsEAACAAEEAwZ3JwB3Lh8ArgEA</span></code></pre>
+			<p>For all available fields, visit the API Docs of the <a href="https://thomask33.github.io/node-underlords/classes/sharecodev8.html">current share code</a>.</p>
+			<p>For unit and items ids, visit the <a href="https://github.com/Fortify-Labs/Fortify/tree/master/services/shared/src/assets">Fortify Repo</a>.</p>
+			<a href="#docs-amp-community" id="docs-amp-community" style="color: inherit; text-decoration: none;">
+				<h2>Docs &amp; Community</h2>
+			</a>
+			<ul>
+				<li><a href="https://thomask33.github.io/node-underlords/">API Docs</a></li>
+				<li><a href="https://discord.gg/u9qJxzQ">Discord Server</a> (I&#39;m Grey#1214)</li>
+			</ul>
+			<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+				<h2>Contributing</h2>
+			</a>
+			<p><a href="https://github.com/ThomasK33/node-underlords/blob/master/CONTRIBUTING.md">Contributing Guide</a></p>
+			<a href="#license" id="license" style="color: inherit; text-decoration: none;">
+				<h2>License</h2>
+			</a>
+			<p><a href="https://github.com/ThomasK33/node-underlords/blob/master/LICENSE">MIT</a></p>
 			<a href="#disclaimer" id="disclaimer" style="color: inherit; text-decoration: none;">
 				<h2>Disclaimer</h2>
 			</a>
-			<p>This project is not affiliated with Valve or Steam.
+			<p>This project is not affiliated with Valve Corporation.
 			Dota Underlords, Dota and Steam are registered trademarks of Valve Corporation.</p>
 		</div>
 		<div style="position:relative;"><a name="typedoc-main-index" class="tsd-anchor"></a></div>
@@ -105,7 +164,7 @@
 				<div class="tsd-signature tsd-kind-icon">Board<wbr>Cell<wbr>Num<wbr>V8<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">8</span><span class="tsd-signature-symbol"> = 8</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/ThomasK33/node-underlords/blob/ac89ba1/src/sharecodes/v8.ts#L8">sharecodes/v8.ts:8</a></li>
+						<li>Defined in <a href="https://github.com/ThomasK33/node-underlords/blob/def9494/src/sharecodes/v8.ts#L8">sharecodes/v8.ts:8</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -115,7 +174,7 @@
 				<div class="tsd-signature tsd-kind-icon">Sharecode<wbr>Max<wbr>Talents<wbr>V8<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">16</span><span class="tsd-signature-symbol"> = 16</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/ThomasK33/node-underlords/blob/ac89ba1/src/sharecodes/v8.ts#L9">sharecodes/v8.ts:9</a></li>
+						<li>Defined in <a href="https://github.com/ThomasK33/node-underlords/blob/def9494/src/sharecodes/v8.ts#L9">sharecodes/v8.ts:9</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -125,7 +184,7 @@
 				<div class="tsd-signature tsd-kind-icon">Sharecode<wbr>Max<wbr>Unequipped<wbr>Items<wbr>V8<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">8</span><span class="tsd-signature-symbol"> = 8</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/ThomasK33/node-underlords/blob/ac89ba1/src/sharecodes/v8.ts#L10">sharecodes/v8.ts:10</a></li>
+						<li>Defined in <a href="https://github.com/ThomasK33/node-underlords/blob/def9494/src/sharecodes/v8.ts#L10">sharecodes/v8.ts:10</a></li>
 					</ul>
 				</aside>
 			</section>
