@@ -41,7 +41,6 @@ jobs:
             !./node_modules/**/*
 
   report-coverage:
-    if: startsWith(github.ref, 'refs/tags/v')
     runs-on: ubuntu-latest
     needs: build
 
@@ -68,3 +67,34 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
+
+  publish-package:
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: build
+      - name: Use Node.js ${{ env.DEFAULT_NODE_VERSION }} with NPM registry
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ env.DEFAULT_NODE_VERSION }}
+          registry-url: "https://registry.npmjs.org"
+      - run: npm ci
+
+      - name: Publish to NPM
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Use Node.js ${{ env.DEFAULT_NODE_VERSION }} with GPR registry
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ env.DEFAULT_NODE_VERSION }}
+          registry-url: "https://npm.pkg.github.com"
+      - name: Publish to GPR
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
