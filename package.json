@@ -1,6 +1,6 @@
 {
   "name": "underlords",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Library for encoding and decoding Underlords share codes",
   "keywords": [
     "dota",

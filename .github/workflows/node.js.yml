@@ -96,5 +96,6 @@ jobs:
           registry-url: "https://npm.pkg.github.com"
       - name: Publish to GPR
         run: npm publish
+        continue-on-error: true
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
