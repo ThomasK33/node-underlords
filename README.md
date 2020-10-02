@@ -17,7 +17,7 @@ TypeScript / JavaScript library for Dota Underlords.
 
 ## Installation
 
-This is a [Node.js](https://nodejs.org/) module available through the [NPM registry](https://www.npmjs.com/) and the [GitHub Packages](https://github.com/features/packages).
+This is a [Node.js](https://nodejs.org/) module available through the [NPM registry](https://www.npmjs.com/) and [GitHub Packages](https://github.com/features/packages).
 
 Before installing, please download and install a Node.js version greater or equal to 10.0.
 
@@ -30,6 +30,8 @@ npm install underlords
 ## Quick Start
 
 ```javascript
+import { ShareCodeV8 } from "underlords";
+
 // Parse an Underlords share code to a ShareCodeV8 instance
 const shareCode =
 	"8qAMAAP4BAK4BAATjJ/5uAEZuAAAgEVM0LgAAAG0AbQAACwAAAP8BDAABCRsI/wAJARcBAQAOAQUBAQAGES0QbUBHOlcBEmoBAAFIACABaBABAyAAEAEpLAIgIAAwAAAGAgEgAAWCAHUR2gB0EQkBAQRjAAVyLBAAAgABBAMGdycAdy4fAK4BAA==";
