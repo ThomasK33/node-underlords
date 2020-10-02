@@ -33,9 +33,9 @@ npm install underlords
 import { ShareCodeV8 } from "underlords";
 
 // Parse an Underlords share code to a ShareCodeV8 instance
-const shareCode =
+const shareCodeString =
 	"8qAMAAP4BAK4BAATjJ/5uAEZuAAAgEVM0LgAAAG0AbQAACwAAAP8BDAABCRsI/wAJARcBAQAOAQUBAQAGES0QbUBHOlcBEmoBAAFIACABaBABAyAAEAEpLAIgIAAwAAAGAgEgAAWCAHUR2gB0EQkBAQRjAAVyLBAAAgABBAMGdycAdy4fAK4BAA==";
-const shareCode = ShareCodeV8.fromBase64String(shareCode);
+const shareCode = ShareCodeV8.fromBase64String(shareCodeString);
 
 // Log board unit at index 0x0
 console.log(shareCode.boardUnitIDs[0][0]);
