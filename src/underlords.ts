@@ -5,3 +5,5 @@ export {
 	EquippedItemV8,
 	ShareCodeV8,
 } from "./sharecodes/v8";
+
+export const CurrentShareCodeVersion = 8;
