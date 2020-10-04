@@ -55,6 +55,9 @@
 			<a href="globals.html#boardcellnumv8" class="tsd-kind-icon">Board<wbr>Cell<wbr>Num<wbr>V8</a>
 		</li>
 		<li class=" tsd-kind-variable">
+			<a href="globals.html#currentsharecodeversion" class="tsd-kind-icon">Current<wbr>Share<wbr>Code<wbr>Version</a>
+		</li>
+		<li class=" tsd-kind-variable">
 			<a href="globals.html#sharecodemaxtalentsv8" class="tsd-kind-icon">Sharecode<wbr>Max<wbr>Talents<wbr>V8</a>
 		</li>
 		<li class=" tsd-kind-variable">
@@ -85,17 +88,19 @@
 			<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
 				<h2>Installation</h2>
 			</a>
-			<p>This is a <a href="https://nodejs.org/">Node.js</a> module available through the <a href="https://www.npmjs.com/">NPM registry</a> and the <a href="https://github.com/features/packages">GitHub Packages</a>.</p>
+			<p>This is a <a href="https://nodejs.org/">Node.js</a> module available through the <a href="https://www.npmjs.com/">NPM registry</a> and <a href="https://github.com/features/packages">GitHub Packages</a>.</p>
 			<p>Before installing, please download and install a Node.js version greater or equal to 10.0.</p>
 			<p>Installation of the module is done using the npm install command:</p>
 			<pre><code class="language-bash">npm install underlords</code></pre>
 			<a href="#quick-start" id="quick-start" style="color: inherit; text-decoration: none;">
 				<h2>Quick Start</h2>
 			</a>
-			<pre><code class="language-javascript"><span class="hljs-comment">// Parse an Underlords share code to a ShareCodeV8 instance</span>
-<span class="hljs-keyword">const</span> shareCode =
+			<pre><code class="language-javascript"><span class="hljs-keyword">import</span> { ShareCodeV8 } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;underlords&quot;</span>;
+
+<span class="hljs-comment">// Parse an Underlords share code to a ShareCodeV8 instance</span>
+<span class="hljs-keyword">const</span> shareCodeString =
     <span class="hljs-string">&quot;8qAMAAP4BAK4BAATjJ/5uAEZuAAAgEVM0LgAAAG0AbQAACwAAAP8BDAABCRsI/wAJARcBAQAOAQUBAQAGES0QbUBHOlcBEmoBAAFIACABaBABAyAAEAEpLAIgIAAwAAAGAgEgAAWCAHUR2gB0EQkBAQRjAAVyLBAAAgABBAMGdycAdy4fAK4BAA==&quot;</span>;
-<span class="hljs-keyword">const</span> shareCode = ShareCodeV8.fromBase64String(shareCode);
+<span class="hljs-keyword">const</span> shareCode = ShareCodeV8.fromBase64String(shareCodeString);
 
 <span class="hljs-comment">// Log board unit at index 0x0</span>
 <span class="hljs-built_in">console</span>.log(shareCode.boardUnitIDs[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]);
@@ -149,6 +154,7 @@ shareCode.boardUnitIDs[<span class="hljs-number">0</span>][<span class="hljs-num
 						<h3>Variables</h3>
 						<ul class="tsd-index-list">
 							<li class="tsd-kind-variable"><a href="globals.html#boardcellnumv8" class="tsd-kind-icon">Board<wbr>Cell<wbr>Num<wbr>V8</a></li>
+							<li class="tsd-kind-variable"><a href="globals.html#currentsharecodeversion" class="tsd-kind-icon">Current<wbr>Share<wbr>Code<wbr>Version</a></li>
 							<li class="tsd-kind-variable"><a href="globals.html#sharecodemaxtalentsv8" class="tsd-kind-icon">Sharecode<wbr>Max<wbr>Talents<wbr>V8</a></li>
 							<li class="tsd-kind-variable"><a href="globals.html#sharecodemaxunequippeditemsv8" class="tsd-kind-icon">Sharecode<wbr>Max<wbr>Unequipped<wbr>Items<wbr>V8</a></li>
 						</ul>
@@ -164,7 +170,17 @@ shareCode.boardUnitIDs[<span class="hljs-number">0</span>][<span class="hljs-num
 				<div class="tsd-signature tsd-kind-icon">Board<wbr>Cell<wbr>Num<wbr>V8<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">8</span><span class="tsd-signature-symbol"> = 8</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/ThomasK33/node-underlords/blob/1779c74/src/sharecodes/v8.ts#L8">sharecodes/v8.ts:8</a></li>
+						<li>Defined in <a href="https://github.com/ThomasK33/node-underlords/blob/9029808/src/sharecodes/v8.ts#L8">sharecodes/v8.ts:8</a></li>
+					</ul>
+				</aside>
+			</section>
+			<section class="tsd-panel tsd-member tsd-kind-variable">
+				<a name="currentsharecodeversion" class="tsd-anchor"></a>
+				<h3><span class="tsd-flag ts-flagConst">Const</span> Current<wbr>Share<wbr>Code<wbr>Version</h3>
+				<div class="tsd-signature tsd-kind-icon">Current<wbr>Share<wbr>Code<wbr>Version<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">8</span><span class="tsd-signature-symbol"> = 8</span></div>
+				<aside class="tsd-sources">
+					<ul>
+						<li>Defined in <a href="https://github.com/ThomasK33/node-underlords/blob/9029808/src/underlords.ts#L9">underlords.ts:9</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -174,7 +190,7 @@ shareCode.boardUnitIDs[<span class="hljs-number">0</span>][<span class="hljs-num
 				<div class="tsd-signature tsd-kind-icon">Sharecode<wbr>Max<wbr>Talents<wbr>V8<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">16</span><span class="tsd-signature-symbol"> = 16</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/ThomasK33/node-underlords/blob/1779c74/src/sharecodes/v8.ts#L9">sharecodes/v8.ts:9</a></li>
+						<li>Defined in <a href="https://github.com/ThomasK33/node-underlords/blob/9029808/src/sharecodes/v8.ts#L9">sharecodes/v8.ts:9</a></li>
 					</ul>
 				</aside>
 			</section>
@@ -184,7 +200,7 @@ shareCode.boardUnitIDs[<span class="hljs-number">0</span>][<span class="hljs-num
 				<div class="tsd-signature tsd-kind-icon">Sharecode<wbr>Max<wbr>Unequipped<wbr>Items<wbr>V8<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">8</span><span class="tsd-signature-symbol"> = 8</span></div>
 				<aside class="tsd-sources">
 					<ul>
-						<li>Defined in <a href="https://github.com/ThomasK33/node-underlords/blob/1779c74/src/sharecodes/v8.ts#L10">sharecodes/v8.ts:10</a></li>
+						<li>Defined in <a href="https://github.com/ThomasK33/node-underlords/blob/9029808/src/sharecodes/v8.ts#L10">sharecodes/v8.ts:10</a></li>
 					</ul>
 				</aside>
 			</section>
