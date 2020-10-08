@@ -76,7 +76,7 @@
     "commitizen": "4.2.1",
     "cross-env": "7.0.2",
     "cz-conventional-changelog": "3.3.0",
-    "gts": "2.0.2",
+    "gts": "3.0.0",
     "husky": "4.3.0",
     "jest": "26.5.2",
     "jest-config": "26.5.2",
