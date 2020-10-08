@@ -119,7 +119,7 @@ export class ShareCodeV8 {
 	 * @returns Parsed share code object
 	 */
 	public static fromBase64String(code: string) {
-		if (code.charAt(0) != "8") {
+		if (code.charAt(0) !== "8") {
 			throw new Error("Unsupported share code version");
 		}
 
@@ -327,7 +327,7 @@ export class ShareCodeV8 {
 				) {
 					const offset = offsets[offsetIndex];
 
-					const bit = (rank & offset) == offset;
+					const bit = (rank & offset) === offset;
 
 					if (bit) {
 						packedUnitRank |= 1 << (j * 4 + offsetIndex);
@@ -413,7 +413,7 @@ export class ShareCodeV8 {
 			) {
 				const offset = offsets[offsetIndex];
 
-				const bit = (rank & offset) == offset;
+				const bit = (rank & offset) === offset;
 
 				if (bit) {
 					packedUnitRank |= 1 << (j * 4 + offsetIndex);
@@ -515,10 +515,10 @@ export class ShareCodeV8 {
 
 		for (let i = 0; i < BoardCellNumV8; i++) {
 			for (let j = 0; j < BoardCellNumV8; j++) {
-				let itemBits = unitItems.substr(0, 24);
+				const itemBits = unitItems.substr(0, 24);
 				unitItems = unitItems.slice(24);
 
-				const [l, h, unused] = [
+				const [l, h] = [
 					itemBits.substr(0, 8),
 					itemBits.substr(8, 8),
 					itemBits.substr(16, 8),
@@ -604,7 +604,7 @@ export class ShareCodeV8 {
 					const value = 1 << (j * 4 + offsetIndex);
 					const packedRankAnd = uint32PackedRank & value;
 
-					if (packedRankAnd == value) {
+					if (packedRankAnd === value) {
 						this.unitRanks[i][j] |= 1 << offset;
 					}
 				}
@@ -619,10 +619,10 @@ export class ShareCodeV8 {
 		);
 
 		for (let i = 0; i < BoardCellNumV8; i++) {
-			let itemBits = benchUnitItems.substr(0, 24);
+			const itemBits = benchUnitItems.substr(0, 24);
 			benchUnitItems = benchUnitItems.slice(24);
 
-			const [l, h, unused] = [
+			const [l, h] = [
 				itemBits.substr(0, 8),
 				itemBits.substr(8, 8),
 				itemBits.substr(16, 8),
@@ -673,7 +673,7 @@ export class ShareCodeV8 {
 				const value = 1 << (j * 4 + offsetIndex);
 				const packedRankAnd = uint32PackedRank & value;
 
-				if (packedRankAnd == value) {
+				if (packedRankAnd === value) {
 					this.benchUnitRanks[j] |= 1 << offset;
 				}
 			}
@@ -716,10 +716,10 @@ export class ShareCodeV8 {
 
 		for (let i = 0; i < SharecodeMaxUnequippedItemsV8; i++) {
 			for (let j = 0; j < 2; j++) {
-				let itemBits = unequippedItems.substr(0, 24);
+				const itemBits = unequippedItems.substr(0, 24);
 				unequippedItems = unequippedItems.slice(24);
 
-				const [l, h, unused] = [
+				const [l, h] = [
 					itemBits.substr(0, 8),
 					itemBits.substr(8, 8),
 					itemBits.substr(16, 8),
