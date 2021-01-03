@@ -29,7 +29,7 @@
   "scripts": {
     "lint": "eslint '**/*.ts'",
     "prebuild": "rimraf dist",
-    "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --target es6 --theme minimal --mode file src",
+    "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --theme minimal src",
     "start": "rollup -c rollup.config.ts -w",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
@@ -98,7 +98,7 @@
     "tslint": "6.1.3",
     "tslint-config-prettier": "1.18.0",
     "tslint-config-standard": "9.0.0",
-    "typedoc": "0.19.2",
+    "typedoc": "0.20.10",
     "typescript": "4.1.3"
   },
   "dependencies": {
