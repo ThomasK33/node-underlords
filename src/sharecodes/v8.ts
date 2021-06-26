@@ -348,9 +348,8 @@ export class ShareCodeV8 {
 				.join("");
 
 			for (let k = 0; k < bitPackedUnitRank.length; k++) {
-				bitString[
-					ShareCodeV8.bitOffset.packedUnitRanks + i * 32 + k
-				] = bitPackedUnitRank.charAt(k);
+				bitString[ShareCodeV8.bitOffset.packedUnitRanks + i * 32 + k] =
+					bitPackedUnitRank.charAt(k);
 			}
 		}
 
@@ -371,9 +370,8 @@ export class ShareCodeV8 {
 			const bitSeries = [l, h, "00000000"].join("");
 
 			for (let k = 0; k < bitSeries.length; k++) {
-				bitString[
-					ShareCodeV8.bitOffset.benchUnitItems + i * 24 + k
-				] = bitSeries.charAt(k);
+				bitString[ShareCodeV8.bitOffset.benchUnitItems + i * 24 + k] =
+					bitSeries.charAt(k);
 			}
 		}
 
@@ -387,9 +385,8 @@ export class ShareCodeV8 {
 				.padStart(8, "0");
 
 			for (let j = 0; j < benchedID.length; j++) {
-				bitString[
-					ShareCodeV8.bitOffset.benchedUnitIDs + i * 8 + j
-				] = benchedID.charAt(j);
+				bitString[ShareCodeV8.bitOffset.benchedUnitIDs + i * 8 + j] =
+					benchedID.charAt(j);
 			}
 		}
 
@@ -434,9 +431,8 @@ export class ShareCodeV8 {
 			.join("");
 
 		for (let k = 0; k < bitPackedUnitRank.length; k++) {
-			bitString[
-				ShareCodeV8.bitOffset.packedBenchUnitRanks + k
-			] = bitPackedUnitRank.charAt(k);
+			bitString[ShareCodeV8.bitOffset.packedBenchUnitRanks + k] =
+				bitPackedUnitRank.charAt(k);
 		}
 
 		return bitString;
@@ -448,9 +444,8 @@ export class ShareCodeV8 {
 			const binaryUnderlordID = underlordID.toString(2).padStart(8, "0");
 
 			for (let k = 0; k < binaryUnderlordID.length; k++) {
-				bitString[
-					ShareCodeV8.bitOffset.underlordIDs + i * 8 + k
-				] = binaryUnderlordID.charAt(k);
+				bitString[ShareCodeV8.bitOffset.underlordIDs + i * 8 + k] =
+					binaryUnderlordID.charAt(k);
 			}
 		}
 
@@ -465,9 +460,8 @@ export class ShareCodeV8 {
 				.padStart(8, "0");
 
 			for (let k = 0; k < binaryUnderlordRank.length; k++) {
-				bitString[
-					ShareCodeV8.bitOffset.underlordRanks + i * 8 + k
-				] = binaryUnderlordRank.charAt(k);
+				bitString[ShareCodeV8.bitOffset.underlordRanks + i * 8 + k] =
+					binaryUnderlordRank.charAt(k);
 			}
 		}
 
@@ -584,9 +578,9 @@ export class ShareCodeV8 {
 			.join("");
 
 		/* istanbul ignore next */
-		const iPackedUnitRanks = (
-			sPackedUnitRanks.match(/.{1,32}/g) ?? []
-		).map((i) => parseInt(i, 2));
+		const iPackedUnitRanks = (sPackedUnitRanks.match(/.{1,32}/g) ?? []).map(
+			(i) => parseInt(i, 2),
+		);
 
 		const offsets = [0, 1, 2, 4];
 
