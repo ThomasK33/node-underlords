@@ -33,7 +33,7 @@ jobs:
       - run: npm run test:prod
 
       - if: matrix.node-version == env.DEFAULT_NODE_VERSION
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: build
           path: |
