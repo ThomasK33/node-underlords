@@ -29,8 +29,8 @@
   "scripts": {
     "lint": "eslint '**/*.ts'",
     "prebuild": "rimraf dist",
-    "build": "tsc --module commonjs && rollup -c rollup.config.ts && typedoc --out docs --theme default src/underlords.ts",
-    "start": "rollup -c rollup.config.ts -w",
+    "build": "tsc --module commonjs && rollup -c rollup.config.ts --configPlugin @rollup/plugin-typescript && typedoc --out docs --theme default src/underlords.ts",
+    "start": "rollup -c rollup.config.ts --configPlugin @rollup/plugin-typescript -w",
     "test": "jest --coverage",
     "test:watch": "jest --coverage --watch",
     "test:prod": "npm run lint && npm run test -- --no-cache",
@@ -70,8 +70,12 @@
     ]
   },
   "devDependencies": {
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-typescript": "^11.0.0",
     "@types/jest": "29.4.2",
+    "@types/lodash.camelcase": "^4.3.7",
     "@types/node": "18.15.3",
+    "@types/rollup-plugin-json": "^3.0.3",
     "colors": "1.4.0",
     "commitizen": "4.3.0",
     "cross-env": "7.0.3",
@@ -90,7 +94,6 @@
     "rimraf": "4.4.0",
     "rollup": "3.19.1",
     "rollup-plugin-commonjs": "10.1.0",
-    "rollup-plugin-json": "4.0.0",
     "rollup-plugin-node-resolve": "5.2.0",
     "rollup-plugin-sourcemaps": "0.6.3",
     "rollup-plugin-typescript2": "0.34.1",

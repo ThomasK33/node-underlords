@@ -1,15 +1,16 @@
+import { RollupOptions } from "rollup";
 import resolve from "rollup-plugin-node-resolve";
 import commonjs from "rollup-plugin-commonjs";
 import sourceMaps from "rollup-plugin-sourcemaps";
 import camelCase from "lodash.camelcase";
 import typescript from "rollup-plugin-typescript2";
-import json from "rollup-plugin-json";
+import json from "@rollup/plugin-json";
 
-import pkg from "./package.json";
+import pkg from "./package.json" assert { type: "json" };
 
 const libraryName = "underlords";
 
-export default {
+const bundle: RollupOptions = {
 	input: `src/${libraryName}.ts`,
 	output: [
 		{
@@ -41,3 +42,5 @@ export default {
 		sourceMaps(),
 	],
 };
+
+export default bundle;
