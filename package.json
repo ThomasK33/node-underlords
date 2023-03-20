@@ -72,7 +72,7 @@
   "devDependencies": {
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-typescript": "^11.0.0",
-    "@types/jest": "29.4.2",
+    "@types/jest": "29.5.0",
     "@types/lodash.camelcase": "^4.3.7",
     "@types/node": "18.15.3",
     "@types/rollup-plugin-json": "^3.0.3",
