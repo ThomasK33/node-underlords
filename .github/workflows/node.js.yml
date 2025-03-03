@@ -45,7 +45,7 @@ jobs:
     needs: build
 
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: build
       - name: Coveralls
@@ -59,7 +59,7 @@ jobs:
     needs: build
 
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: build
       - name: Deploy Docs
@@ -74,7 +74,7 @@ jobs:
     needs: build
 
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: build
       - name: Use Node.js ${{ env.DEFAULT_NODE_VERSION }} with NPM registry
@@ -93,7 +93,7 @@ jobs:
     needs: build
 
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: build
       - name: Use Node.js ${{ env.DEFAULT_NODE_VERSION }} with GPR registry
