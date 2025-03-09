@@ -6,7 +6,8 @@ import camelCase from "lodash.camelcase";
 import typescript from "rollup-plugin-typescript2";
 import json from "@rollup/plugin-json";
 
-import pkg from "./package.json" assert { type: "json" };
+import { readFileSync } from "fs";
+const pkg = JSON.parse(readFileSync("./package.json", "utf8"));
 
 const libraryName = "underlords";
 
