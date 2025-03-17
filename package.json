@@ -74,7 +74,7 @@
     "@rollup/plugin-typescript": "^11.0.0",
     "@types/jest": "29.5.2",
     "@types/lodash.camelcase": "^4.3.7",
-    "@types/node": "18.15.3",
+    "@types/node": "22.13.10",
     "@types/rollup-plugin-json": "^3.0.3",
     "colors": "1.4.0",
     "commitizen": "4.3.0",
